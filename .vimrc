@@ -15,7 +15,7 @@ set confirm
 " Lines are numbered relative to the line the cursor is on
 set number relativenumber
 
-" Sets ruler in the bottom left
+" Sets ruler in the bottom right
 set ruler
 
 " Sets color to koehler. Colors are found in /usr/share/vim/vim82/colors
