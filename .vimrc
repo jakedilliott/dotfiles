@@ -1,3 +1,5 @@
+" Copy this file into ~/
+
 " Find the file type based on its name and allow smart auto-indenting
 filetype indent on
 
