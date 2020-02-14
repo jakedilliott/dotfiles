@@ -1,3 +1,5 @@
+# Copy this file into ~/.config/fish/
+
 function fish_mode_prompt
 end
 
