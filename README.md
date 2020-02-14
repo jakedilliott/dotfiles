@@ -11,3 +11,4 @@ My setup:
   
   Shell: Friendly Interactive Shell (FISH)
   
+In addition, I use this repository to learn github so please don't judge my commentsa and commits too harshly ;~;

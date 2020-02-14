@@ -1,5 +1,5 @@
 " Find the file type based on its name and allow smart auto-indenting
-filetype indent plugin on
+filetype indent on
 
 " Keeps you on the same indent when starting a new line, unless the
 " type of file overrides that
