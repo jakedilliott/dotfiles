@@ -24,4 +24,4 @@ set ruler
 colorscheme koehler
 
 "Sets <F5> to compile rmarkdown files
-autocmd Filetype rmd,Rmd map <F5> :!echo<space>rmarkdown::render('<c-r>%')"<space>R<space>--vanilla<enter>
+autocmd Filetype rmd,Rmd map <F5> :!echo<space>"rmarkdown::render('<c-r>%')"<space>R<space>--vanilla<enter>
