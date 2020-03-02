@@ -22,3 +22,6 @@ set ruler
 
 " Sets color to koehler. Colors are found in /usr/share/vim/vim82/colors
 colorscheme koehler
+
+"Sets <F5> to compile rmarkdown files
+autocmd Filetype rmd,Rmd map <F5> :!echo<space>rmarkdown::render('<c-r>%')"<space>R<space>--vanilla<enter>
