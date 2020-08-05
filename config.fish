@@ -4,19 +4,16 @@ function fish_mode_prompt
 end
 
 function fish_greeting
+fortune -s literature | cowsay -f moose
 end
 
+set color1 '#404373'
+set color2 '#96A0D0'
+set color3 '#FFB5CD'
+set color4 '#E7ECFE'
+
 function fish_prompt
-	set_color ffc425 
-	printf "["
-	set_color d11141
-	printf "%s" "$USER"
-	set_color 00b159
-	printf " in "
-	set_color 00aedb
-	echo -n (prompt_pwd)	
-	set_color ffc425 
-	printf "] "
+  echo -n -s (set_color $color2) "$USER" (set_color normal) @ (set_color $color3) (prompt_hostname) ' ' (set_color normal) (prompt_pwd) (set_color $color4) '>> ' 
 end
 
 abbr p "sudo pacman"
