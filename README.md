@@ -5,9 +5,9 @@ My setup:
   - Machine: Dell XPS13 9360
   - OS/Distro: Manjaro XFCE
   - Terminal: Alacritty
-  - Shell: Trying out ZSH with Oh-My-ZSH
-  - Editors:
+  - Shell: ZSH with Oh-My-ZSH
+  - Text Editors:
   	- Shell: NeoVIM
-	- GUI: Atom
+	- GUI: Code OSS & RStudio
 
 
