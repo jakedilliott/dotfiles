@@ -1,6 +1,14 @@
+" To enable symbolically link this file to
+" `/home/<user>/.config/nvim/init.vim`
+" EXAMPLE
+" `ln -s ~/Downloads/dotfiles/init.vim ~/.config/nvim/init.vim`
+
 " Find the file type based on its name and allow smart auto-indenting
 filetype indent on
-
+set tabstop=4
+set shiftwidth=4
+set expandtab
+   
 " Turn on smart indentation
 set si
 
@@ -28,39 +36,71 @@ set mouse=a
 " Sets <F5> to compile rmarkdown files
 autocmd Filetype rmd,Rmd map <F5> :!echo<space>"rmarkdown::render('<c-r>%')"<space>R<space>--vanilla<enter>
 
-" Plugin stuff
-" Path
+" Plugin stuff using plugged
+" Path, make sure to create this before running `PluggedInstall`
 call plug#begin('~/.vim/plugged')
+	Plug 'ncm2/ncm2'			"auto completion
+	Plug 'roxma/nvim-yarp'			"auto completion
 
-" Plugins
-" Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
-" Plug 'ncm2/ncm2'
-" Plug 'roxma/nvim-yarp'
-" Plug 'gaalcaras/ncm-R'
-Plug 'preservim/nerdtree'
-Plug 'Raimondi/delimitMate'
-Plug 'patstockwell/vim-monokai-tasty'
-Plug 'itchyny/lightline.vim'
+	" NCM2
+	" enable ncm2 for all buffers
+	autocmd BufEnter * call ncm2#enable_for_buffer()
+	set completeopt=noinsert,menuone,noselect
+	set shortmess+=c
+
+	" Yarp debugging
+	let $NVIM_PTHON_LOG_FILE="/tmp/nvim_log"
+	let $NVIM_PYTHON_LOG_LEVEL="DEBUG"
+
+	inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
+	" Tab and Shift+Tab for moving in snippet
+	let g:UltiSnipsJumpForwardTrigger	= "<Tab>"
+	let g:UltiSnipsJumpBackwardTrigger	= "<S-Tab>"
+	let g:UltiSnipsRemoveSelectModeMappings = 0
+
+	" use TAB for popup menu
+	inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+	inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+
+	Plug 'lervag/vimtex'			"latex completion
+	Plug 'ncm2/ncm2-jedi'			"python completion
+	Plug 'ncm2/ncm2-ultisnips'		"ncm2 snippet integration
+	Plug 'SirVer/ultisnips'			"ncm2 snippets
+	
+	" NERDTree Stuff
+	Plug 'preservim/nerdtree'		"nvim file browsing
+	Plug 'Xuyuanp/nerdtree-git-plugin'	"neotree git stuff
+	" Navigation
+	noremap <C-j> <C-w>j
+	noremap <C-k> <C-w>k
+	noremap <C-l> <C-w>l
+	noremap <C-h> <C-w>h
+
+	" Controls
+	nnoremap <leader>n :NERDTree Focus<CR>
+	nnoremap <C-n> :NERDTree<CR>
+	nnoremap <C-t> :NERDTreeToggle<CR>
+	nnoremap <C-f> :NERDTreeFind<CR>
+
+	Plug 'Raimondi/delimitMate'		"highlight matching parens
+	Plug 'itchyny/lightline.vim' 		"colorful vim bar
+	Plug 'patstockwell/vim-monokai-tasty'
+	
+	" LightLine.vim 
+	set laststatus=2              " To tell Vim we want to see the statusline.
+	let g:lightline = {
+   		\ 'colorscheme':'monokai_tasty',
+   		\ }
+
+	
+	
+	" Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
+	" Plug 'gaalcaras/ncm-R'
 
 " Initialize plugin system
 call plug#end()
 
-" Set a local leader
-let mapleader = ","
-let g:mapleader = ","
-
-" NCM2
-" autocmd BufEnter * call ncm2#enable_for_buffer()    " To enable ncm2 for all buffers.
-" set completeopt=noinsert,menuone,noselect           " :help Ncm2PopupOpen for more
-
-" NERD Tree
-map <leader>nn :NERDTreeToggle<CR>                  " Toggle NERD tree.
-
-" LightLine.vim 
-set laststatus=2              " To tell Vim we want to see the statusline.
-let g:lightline = {
-   \ 'colorscheme':'monokai_tasty',
-   \ }
 
 " Sets color to sublime monokai. Colors are found in /usr/share/vim/vim82/colors
 let g:vim_monokai_tasty_italic = 1
