@@ -18,6 +18,9 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=/home/jaked/.oh-my-zsh/custom
 
@@ -37,7 +40,8 @@ plugins=(
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshconfig="nvim ~/.zshrc"
+alias connect_dare="ssh jdilliott@DARECOMPUTE-01.aggie.colostate.edu"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
@@ -67,9 +71,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"

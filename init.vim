@@ -85,15 +85,13 @@ call plug#begin('~/.vim/plugged')
 
 	Plug 'Raimondi/delimitMate'		"highlight matching parens
 	Plug 'itchyny/lightline.vim' 		"colorful vim bar
-	Plug 'patstockwell/vim-monokai-tasty'
+    Plug 'sonph/onehalf', { 'rtp': 'vim' }
+	" Plug 'patstockwell/vim-monokai-tasty'
 	
 	" LightLine.vim 
 	set laststatus=2              " To tell Vim we want to see the statusline.
-	let g:lightline = {
-   		\ 'colorscheme':'monokai_tasty',
-   		\ }
-
-	
+    let g:lightline = { 'colorscheme': 'onehalfdark' }
+	" let g:lightline = { 'colorscheme':'monokai_tasty' }
 	
 	" Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 	" Plug 'gaalcaras/ncm-R'
@@ -103,6 +101,6 @@ call plug#end()
 
 
 " Sets color to sublime monokai. Colors are found in /usr/share/vim/vim82/colors
-let g:vim_monokai_tasty_italic = 1
-colorscheme vim-monokai-tasty 
+" let g:vim_monokai_tasty_italic = 1
+colorscheme onehalfdark
 
