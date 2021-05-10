@@ -28,10 +28,10 @@ ZSH_CUSTOM=/home/jaked/.oh-my-zsh/custom
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(
-	git	    # git info
+	git 	    # git info
 	vi-mode	    # cozy key binds
 	pass	    # pass auto-completion
-	otp	    # otp auto-completion
+	otp	        # otp auto-completion
 	)
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -41,7 +41,10 @@ plugins=(
 #
 # Example aliases
 alias zshconfig="nvim ~/.zshrc"
-alias connect_dare="ssh jdilliott@DARECOMPUTE-01.aggie.colostate.edu"
+alias nvimconfig="nvim ~/.config/nvim/init.vim"
+alias ssh_dare="ssh jdilliott@DARECOMPUTE-01.aggie.colostate.edu"
+alias sftp_dare="sftp jdilliott@DARECOMPUTE-01.aggie.colostate.edu"
+alias pulseconnect="sudo openconnect --juniper https://secure.colostate.edu"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
