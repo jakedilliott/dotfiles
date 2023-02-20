@@ -39,34 +39,34 @@ autocmd Filetype rmd,Rmd map <F5> :!echo<space>"rmarkdown::render('<c-r>%')"<spa
 " Plugin stuff using plugged
 " Path, make sure to create this before running `PluggedInstall`
 call plug#begin('~/.vim/plugged')
-	Plug 'ncm2/ncm2'			"auto completion
-	Plug 'roxma/nvim-yarp'			"auto completion
+	" Plug 'ncm2/ncm2'			"auto completion
+	" Plug 'roxma/nvim-yarp'			"auto completion
 
 	" NCM2
 	" enable ncm2 for all buffers
-	autocmd BufEnter * call ncm2#enable_for_buffer()
-	set completeopt=noinsert,menuone,noselect
-	set shortmess+=c
+	" autocmd BufEnter * call ncm2#enable_for_buffer()
+	" set completeopt=noinsert,menuone,noselect
+	" set shortmess+=c
 
 	" Yarp debugging
-	let $NVIM_PTHON_LOG_FILE="/tmp/nvim_log"
-	let $NVIM_PYTHON_LOG_LEVEL="DEBUG"
+	" let $NVIM_PTHON_LOG_FILE="/tmp/nvim_log"
+	" let $NVIM_PYTHON_LOG_LEVEL="DEBUG"
 
-	inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
+	" inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
 	" Tab and Shift+Tab for moving in snippet
-	let g:UltiSnipsJumpForwardTrigger	= "<Tab>"
-	let g:UltiSnipsJumpBackwardTrigger	= "<S-Tab>"
-	let g:UltiSnipsRemoveSelectModeMappings = 0
+	" let g:UltiSnipsJumpForwardTrigger	= "<Tab>"
+	" let g:UltiSnipsJumpBackwardTrigger	= "<S-Tab>"
+	" let g:UltiSnipsRemoveSelectModeMappings = 0
 
 	" use TAB for popup menu
-	inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-	inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+	" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+	" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 
-	Plug 'lervag/vimtex'			"latex completion
-	Plug 'ncm2/ncm2-jedi'			"python completion
-	Plug 'ncm2/ncm2-ultisnips'		"ncm2 snippet integration
-	Plug 'SirVer/ultisnips'			"ncm2 snippets
+	" Plug 'lervag/vimtex'			"latex completion
+	" Plug 'ncm2/ncm2-jedi'			"python completion
+	" Plug 'ncm2/ncm2-ultisnips'		"ncm2 snippet integration
+	" Plug 'SirVer/ultisnips'			"ncm2 snippets
 	
 	" NERDTree Stuff
 	Plug 'preservim/nerdtree'		"nvim file browsing
