@@ -1,16 +1,20 @@
 [user]
-	email = jdilliott@protonmail.com
-	user = jakedilliott
-	name = Jake Dilliott
-[core]
-	editor = nvim
-[credential]
-	helper = store
-[pager]
-	branch = false
-[diff]
-	tool = nvimdiff
-[merge]
-	tool = nvimdiff
+    user = jakedilliott
+    name = Jake Dilliott
+    email = jdilliott@protonmail.com
 [init]
-	defaultBranch = main
+    DefaultBranch = main
+[credential]
+    credentialStore = secretservice
+    helper = 
+    helper = /usr/bin/git-credential-manager
+[core]
+    editor = nvim
+[pager]
+    branch = false
+[diff]
+    tool = nvimdiff
+[merge]
+    tool = nvimdiff
+[credential "https://dev.azure.com"]
+    useHttpPath = true
