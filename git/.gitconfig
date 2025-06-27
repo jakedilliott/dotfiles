@@ -1,0 +1,16 @@
+[user]
+	email = jdilliott@protonmail.com
+	user = jakedilliott
+	name = Jake Dilliott
+[core]
+	editor = nvim
+[credential]
+	helper = store
+[pager]
+	branch = false
+[diff]
+	tool = nvimdiff
+[merge]
+	tool = nvimdiff
+[init]
+	defaultBranch = main
